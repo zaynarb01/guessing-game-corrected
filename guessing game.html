@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+</head>
+<body>
+    <script>
+    alert("Welcome to the Guessing Game!");
+    alert("You have three attempts to guess a number");
+    alert("The number is between 1 and 50");
+    alert("Good luck!");
+    var randomNumber = Math.floor(Math.random() * 50) + 1; // Random number between 1 and 50
+    var attempts = 3; // Number of attempts allowed
+    for (var i = 0; i < attempts; i++) {
+        var randomNumbers = prompt("Enter guess");
+        if (randomNumbers < 1 || randomNumbers > 50) {
+            alert("Out of bounds! Please enter a number between 1 and 50.");
+        continue;
+        }
+       if(isNaN(randomNumbers)){
+            alert("Invalid input! Please enter a number.");
+        continue;
+        }  
+        if (randomNumbers === randomNumber) {
+            alert("Congratulations! You guessed right!.....HURRAAY!" );
+            break;
+        }   else if (randomNumbers !== randomNumber) {
+            alert("wrong guess! you have " + (attempts - i - 1) + " attempts left. Try again.");
+        }
+    } if (i === attempts) {
+        alert("Sorry, you have used all your attempts. The correct number was " + randomNumber + ". Game Over!");
+    }
+    
+    
+        
+    </script>
+</body>
+</html>
